@@ -1,5 +1,6 @@
 __pycache__
 .env
 .learn
-data/
-models/
+data/raw/
+data/interim/
+data/processed/
