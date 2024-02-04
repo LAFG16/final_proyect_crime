@@ -8,7 +8,7 @@ st.markdown('<style>h1 { color: navy; text-align: center;}</style>', unsafe_allo
 
 st.title("L.A. CRIME")
 
-image = "../data/raw/LA POLICE.png"
+image = "../data/images/POLICE.png"
 
 st.image(image, output_format="PNG")
 
@@ -70,7 +70,7 @@ elif type_of_crime == "Robbery":
         y_pred = model.predict(array)
 
         st.text("The Robbery prediction: " + str(y_pred[0]))
-        
+
         data = {'latitude': [latitude], 'longitude': [longitude]}
         
         df = pd.DataFrame(data)
