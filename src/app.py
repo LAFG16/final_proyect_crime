@@ -47,7 +47,7 @@ if type_of_crime == "Burglary":
         model = load(open("../models/best_model_burglary.pk", "rb"))
         y_pred = model.predict(array)
 
-        st.text("The burglary prediction: " + str(y_pred[0]))
+        st.text("The burglary profile: " + str(y_pred[0]))
 
         data = {'latitude': [latitude], 'longitude': [longitude]}
 
@@ -66,10 +66,10 @@ elif type_of_crime == "Robbery":
         array = np.array(row).reshape(1, -1)  # Reshape to 2D array
         
         # load model
-        model = load(open("../models/best_model_Robbery.pk", "rb"))
+        model = load(open("../models/best_model_robbery.pk", "rb"))
         y_pred = model.predict(array)
 
-        st.text("The Robbery prediction: " + str(y_pred[0]))
+        st.text("The Robbery profile: " + str(y_pred[0]))
 
         data = {'latitude': [latitude], 'longitude': [longitude]}
         
@@ -95,7 +95,7 @@ elif type_of_crime == "Rape":
         model = load(open("../models/best_model_rapist.pk", "rb"))
         y_pred = model.predict(array)
 
-        st.text("The rape prediction: " + str(y_pred[0]))
+        st.text("The rape profile: " + str(y_pred[0]))
 
 elif type_of_crime == "Homicide":
 
@@ -118,7 +118,7 @@ elif type_of_crime == "Homicide":
         model = load(open("../models/best_model_killers.pk", "rb"))
         y_pred = model.predict(array)
 
-        st.text("The homocide prediction: " + str(y_pred[0]))
+        st.text("The homocide profile: " + str(y_pred[0]))
     
 
 elif type_of_crime == "Child Abuse":
@@ -140,7 +140,7 @@ elif type_of_crime == "Child Abuse":
         model = load(open("../models/best_model_child.pk", "rb"))
         y_pred = model.predict(array)
 
-        st.text("The child abused prediction: " + str(y_pred[0]))
+        st.text("The child abuser profile: " + str(y_pred[0]))
 
 else:
     st.text("No crime selected")
