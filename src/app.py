@@ -73,7 +73,7 @@ elif type_of_crime == "Robbery":
         y_pred = model.predict(array)[0]
         pred_class = class_dict[y_pred]
 
-        st.text("Possible robbery gang: " + pred_class))
+        st.text("Possible robbery gang: " + pred_class)
 
         data = {'latitude': [latitude], 'longitude': [longitude]}
         
@@ -100,7 +100,7 @@ elif type_of_crime == "Rape":
         y_pred = model.predict(array)[0]
         pred_class = class_dict[y_pred]
 
-        st.text("Possible rapist profile: " + pred_class))
+        st.text("Possible rapist profile: " + pred_class)
 
 elif type_of_crime == "Homicide":
 
