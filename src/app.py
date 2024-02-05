@@ -32,6 +32,8 @@ area_name_dict = {"Southwest":0, "Central":1, "N Hollywood":2, "Mission":3, "Har
                  "Devonshire":20
 }
 
+class_dict={0:'A',1:'B',2:'C',3:'D',4:'E',5:'F',6:'G',7:'H',8:'I',9:'J'}
+
 if type_of_crime == "Burglary":
 
     latitude = st.slider('Select latitude', min_value=33.978735, max_value=34.328900, step=0.00001)
@@ -46,8 +48,9 @@ if type_of_crime == "Burglary":
         # load model
         model = load(open("../models/best_model_burglary.pk", "rb"))
         y_pred = model.predict(array)
+        pred_class = class_dict[y_pred]
 
-        st.text("The burglary profile: " + str(y_pred[0]))
+        st.text("Possible burglary gang: " + str(pred_class[0]))
 
         data = {'latitude': [latitude], 'longitude': [longitude]}
 
@@ -66,10 +69,11 @@ elif type_of_crime == "Robbery":
         array = np.array(row).reshape(1, -1)  # Reshape to 2D array
         
         # load model
-        model = load(open("../models/best_model_robbery.pk", "rb"))
+        model = load(open("../models/model_robbery.pk", "rb"))
         y_pred = model.predict(array)
+        pred_class = class_dict[y_pred]
 
-        st.text("The Robbery profile: " + str(y_pred[0]))
+        st.text("Possible robbery gang: " + str(pred_class[0]))
 
         data = {'latitude': [latitude], 'longitude': [longitude]}
         
@@ -94,8 +98,9 @@ elif type_of_crime == "Rape":
         # load model
         model = load(open("../models/best_model_rapist.pk", "rb"))
         y_pred = model.predict(array)
+        pred_class = class_dict[y_pred]
 
-        st.text("The rape profile: " + str(y_pred[0]))
+        st.text("Possible rapist profile: " + str(pred_class[0]))
 
 elif type_of_crime == "Homicide":
 
@@ -117,8 +122,9 @@ elif type_of_crime == "Homicide":
         # load model
         model = load(open("../models/best_model_killers.pk", "rb"))
         y_pred = model.predict(array)
+        pred_class = class_dict[y_pred]
 
-        st.text("The homocide profile: " + str(y_pred[0]))
+        st.text("Possible homicide profile: " + str(pred_class[0]))
     
 
 elif type_of_crime == "Child Abuse":
@@ -139,8 +145,9 @@ elif type_of_crime == "Child Abuse":
         # load model
         model = load(open("../models/best_model_child.pk", "rb"))
         y_pred = model.predict(array)
+        pred_class = class_dict[y_pred]
 
-        st.text("The child abuser profile: " + str(y_pred[0]))
+        st.text("Possible child molester: " + str(pred_class[0]))
 
 else:
     st.text("No crime selected")
