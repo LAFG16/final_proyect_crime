@@ -3,11 +3,12 @@ from pickle import load
 import numpy as np
 import pandas as pd
 
-
+# style of title to configure color and alination
 st.markdown('<style>h1 { color: navy; text-align: center;}</style>', unsafe_allow_html=True)
 
 st.title("L.A. CRIME")
 
+#import police logo
 image = "../data/images/POLICE.png"
 
 st.image(image, output_format="PNG")
@@ -52,6 +53,7 @@ if type_of_crime == "Burglary":
 
         st.text("Possible burglary gang: " + pred_class)
 
+        # Creating dataset with imput variables to visualize on a map
         data = {'latitude': [latitude], 'longitude': [longitude]}
 
         df = pd.DataFrame(data)
@@ -74,7 +76,8 @@ elif type_of_crime == "Robbery":
         pred_class = class_dict[y_pred]
 
         st.text("Possible robbery gang: " + pred_class)
-
+        
+        # Creating dataset with imput variables to visualize on a map
         data = {'latitude': [latitude], 'longitude': [longitude]}
         
         df = pd.DataFrame(data)
