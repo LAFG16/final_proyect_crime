@@ -71,7 +71,7 @@ elif type_of_crime == "Robbery":
         array = np.array(row).reshape(1, -1)  # Reshape to 2D array
         
         # load model
-        model = load(open("../models/model_robbery.pk", "rb"))
+        model = load(open("../models/best_model_robbery.pk", "rb"))
         y_pred = model.predict(array)[0]
         pred_class = class_dict[y_pred]
 

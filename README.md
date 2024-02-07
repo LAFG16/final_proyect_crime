@@ -20,4 +20,4 @@ An streamlit deploynent python script
 
 Besides the src this repository also contains a 'data' which was not uploaded to github due to its large memory and a 'models' file with the five different models obtained in it For the model developpment we have created 10 groups of LA gangs/profiles (k=10) according to some variables like area, geographic coordinates, descent, sex and age of the victim, then considering the data of future crimes we could predict to what profile the gang/criminal belongs.
 
-This project is deployed on render. [URL](https://l-a-crime.onrender.com)
+This project is deployed on render [here](https://l-a-crime.onrender.com)
