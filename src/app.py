@@ -85,7 +85,7 @@ elif type_of_crime == "Robbery":
 
 elif type_of_crime == "Rape":
 
-    age = st.select_slider("Select Age: ", np.arange(1, 99))
+    age = st.select_slider("Select Age: ", np.arange(1, 100))
     descent = st.selectbox("Select Descent: ", [key for key in sorted(descent_dict)])
     area = st.selectbox("Select Area: ", [key for key in sorted(area_name_dict)])
 
@@ -107,7 +107,7 @@ elif type_of_crime == "Rape":
 
 elif type_of_crime == "Homicide":
 
-    age = st.select_slider("Select Age: ", np.arange(1, 99))
+    age = st.select_slider("Select Age: ", np.arange(1, 100))
     sex = st.selectbox("Select Sex: ", [key for key in sorted(sex_dict)])
     descent = st.selectbox("Select Descent: ", [key for key in sorted(descent_dict)])
     area = st.selectbox("Select Area: ", [key for key in sorted(area_name_dict)])
